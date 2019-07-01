@@ -55,7 +55,7 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   <<: *default
   database: aut_cycle_june_2019_test
 
@@ -83,3 +83,6 @@ production:
   database: aut_cycle_june_2019_production
   username: aut_cycle_june_2019
   password: <%= ENV['AUT_CYCLE_JUNE_2019_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
